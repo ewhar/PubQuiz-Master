@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="../src/quiz.xsl" type="text/xsl"?>
+<quizes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../src/quiz.xsd">
+    <quiz>
+        <amount>9</amount>
+        <difficulty>easy</difficulty>
+        <category>12</category>
+    </quiz>
+</quizes>

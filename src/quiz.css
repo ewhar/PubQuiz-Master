@@ -1,0 +1,142 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded;
+}
+
+:root {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 59, 89, .8);
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+th {
+    height: 30px;
+    color: white;
+    font-size: 19px;
+}
+
+td {
+    height: 30px;
+}
+
+p {
+    padding: 30px;
+    color: white;
+    font-size: 19px;
+    text-align: center;
+}
+
+.dropit {
+    height: 30px;
+    text-align: center;
+    margin: 30px;
+}
+
+.fileUploadDiv {
+    height: 30px;
+    text-align: center;
+    margin: 20px;
+    color: white;
+}
+
+.center {
+    position: relative;
+    margin: -20px -50px;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+}
+
+.newQuiz {
+    padding: 30px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid #104E8B;
+    background-color: #104E8B;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover:enabled {
+    border-color: black;
+    background-color: cadetblue;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    background-color: #00FF6A;
+    color: black;
+}
+
+.wrong {
+    background-color: #FF0000;
+    color: black;
+}
+
+.progress {
+    width: 25%;
+    height: 10px;
+}
+
+.alert {
+    background-color: #FF0000;
+    color: black;
+    border-radius: 15px;
+    margin: 10px;
+    padding-left: 20px;
+}
+
+.background {
+    background-color: #104E8B;
+}

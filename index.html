@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="src/quiz.css"/>
+    <script type="text/javascript" src="src/quiz.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PubQuiz-Master</title>
+</head>
+<body onload="init()">
+<div id="container">
+    <div class="alert hidden" id="errorDiv">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <h1 class="title">PubQuiz-Master</h1>
+
+    <!-- Start Div-->
+    <div id="startDiv" class="visible">
+        <div class="inputDiv">
+            <form id="start_form">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th><span>Select a category</span></th>
+                        <th><span>Amount of Questions:</span></th>
+                        <th><span>Select a difficulty</span></th>
+                    </tr>
+                    <tr>
+                        <td><select id="dropDownCat" class="dropit"></select>
+                        <td><input type="number" id="amount" value="10" min="1" max="20" class="dropit"/></td>
+                        <td><select id="diff" class="dropit">
+                            <option id="easy">Easy</option>
+                            <option id="medium">Medium</option>
+                            <option id="hard">Hard</option>
+                        </select></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <button class="btn start-btn center" id="searchQuestions" onclick="searchQuestions()">Start Quiz</button>
+        <p>OR</p>
+        <div class="fileUploadDiv">
+            <form id="file_form">
+                <input id="fileUpload" type="file"/>
+            </form>
+        </div>
+    </div>
+
+    <!-- Result Div-->
+    <div id="resultDiv" class="hidden">
+        <div class="relative pt-1">
+            <div class="flex mb-2 items-center justify-between">
+                <div>
+                    <span class="text-base font-semibold inline-block py-1 px-4 uppercase rounded-full text-white background">
+                    Here is your Result</span>
+                </div>
+                <div class="text-right">
+                    <span class="text-base font-semibold inline-block text-white" id="showResult"></span>
+                </div>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-6">
+                <div class="bg-gray-600 h-6 text-base font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full progress"
+                     id="resultProgress"
+                ></div>
+            </div>
+        </div>
+        <div class="newQuiz">
+            <button class="btn center " id="backBT">New Quiz</button>
+        </div>
+    </div>
+
+    <!-- Questions Div-->
+    <div id="questionsDiv" class="hidden">
+        <div id="questions" class="form-check">
+            <p id="status_p"></p>
+            <p id="question_p"></p>
+            <div id="btnDiv" class="btn-grid">
+                <button id="0" class="btn answerBtn"></button>
+                <button id="1" class="btn answerBtn"></button>
+                <button id="2" class="btn answerBtn"></button>
+                <button id="3" class="btn answerBtn"></button>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="hidden btn" id="nextQuestion"> Next Question</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

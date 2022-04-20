@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="quizes" type="quizes" />
+    <xs:complexType name="quizes">
+        <xs:sequence>
+            <xs:element name="quiz" type="quiz" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="quiz">
+        <xs:sequence>
+            <xs:element name="amount" type="amount_type"/>
+            <xs:element name="difficulty" type="difficulty_type"/>
+            <xs:element name="category" type="category_type"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="amount_type">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="difficulty_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="easy"/>
+            <xs:enumeration value="medium"/>
+            <xs:enumeration value="hard"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="category_type">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="9"/>
+            <xs:maxInclusive value="32"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
